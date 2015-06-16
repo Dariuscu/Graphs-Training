@@ -35,13 +35,14 @@ p <- ggplot(dataCount, aes(x = Year, y = Count, group = 1)) + geom_line(colour =
 
 # Add some formatting to the graph
 p + expand_limits(y = 0) +
-  geom_text(aes(label = Count), size = 4, vjust = -0.9) +
-  scale_y_continuous(breaks = seq(0, 150, 25)) +
-  ggtitle("Number of species identified per year for dataset GA001257\n") + 
+  geom_text(aes(label = Count), size = 5, vjust = -0.9, fontface = "bold") +
+  scale_y_continuous(breaks = seq(0, 160, 25)) +
+  expand_limits(y = 155) +
+  ggtitle("Number of species identified per year for dataset GA001257:\nEunicella verrucosa, Survey 1999-2014 (MBA)\n") + 
   labs(x = "", y = "Count") +
   theme(plot.title = element_text(colour = "#006600", face = "bold", size = 20, family = "Calibri"),
         axis.text.x = element_text(colour = "black", size = 13),
-        axis.text.y = element_text(colour = "black", size = 10),
+        axis.text.y = element_text(colour = "black", size = 12),
         panel.background = element_rect(fill = "#FFFFCC"),
         panel.grid.major = element_line(colour = "#999999", size = 0.3),
         panel.grid.minor = element_line(colour = "#CCCCCC", size = 0.1)) +
